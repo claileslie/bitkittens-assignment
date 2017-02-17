@@ -6,9 +6,9 @@ $(function() {
       method: 'GET',
       dataType: 'json'
     }).done(function(data){
-      $(data.cats).each(function(){
+      $(data.cats).each(function(index){
         var cat = $('<img>').attr('src', this.photo).attr('alt','Photo of: ' + this.name)
-        $('.cat-box').html(cat)
+        $('#cat' + (index+1)).html(cat)
       });
     });
   });
